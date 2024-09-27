@@ -1,0 +1,48 @@
+containers:
+  - name: k8s-ctf
+    ports:
+      - name: k8s-ctf
+        value: 8080
+        protocol: tcp
+
+image:
+  repository: apoorvderiv/k8s-ctf
+  pullPolicy: IfNotPresent
+  tag: "v1"
+
+labels:
+  lbtype: internal
+
+resources:
+  limits:
+    cpu: 10m
+    memory: 128Mi
+  requests:
+    cpu: 10m
+    memory: 128Mi
+
+service:
+  enabled: true
+  type: ClusterIP
+  ports:
+    - name: k8s-ctf
+      port: 8080
+      protocol: TCP
+      targetPort: k8s-ctf
+
+livenessProbe:
+  periodSeconds: 30
+  successThreshold: 1
+  failureThreshold: 3
+  httpGet:
+    path: /healthz
+    port: fraud-prev
+
+readinessProbe:
+  periodSeconds: 30
+  initialDelaySeconds: 5
+  successThreshold: 1
+  failureThreshold: 3
+  httpGet:
+    path: /healthz
+    port: fraud-prev

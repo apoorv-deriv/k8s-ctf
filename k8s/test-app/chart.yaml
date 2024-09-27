@@ -1,0 +1,3 @@
+chart:
+  path: oci://834667370484.dkr.ecr.us-east-1.amazonaws.com/docker-hub-regentmarkets/regentmarkets/backend-deployment-chart
+  version: 1.0.0
