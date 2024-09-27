@@ -1,5 +1,7 @@
 # K8s Workshop
 
+`git clone git@github.com:apoorv-deriv/k8s-ctf.git`
+
 ## Connect to EKS cluster.
 
 Steps:
