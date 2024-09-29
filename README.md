@@ -22,5 +22,6 @@ Steps:
 - [ ] Clone https://github.com/regentmarkets/environment-manifests-qa/. And switch to your QA branch
 - [ ] Create a `mkdir -p k8s` folder in repo.
 - [ ] Now copy the contents of `k8s/test-app` from this repo to `k8s`. `cp -r ../k8s-ctf/k8s/test-app k8s/`
-- [ ] 
+- [ ] Once you deploy lets check if the application is running on the cluster by running `kubectl get po -n qaXX -w`
+
 

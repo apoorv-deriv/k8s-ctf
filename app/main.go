@@ -3,16 +3,23 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"os"
 	"time"
 )
 
 var (
-	isHealthy = true
+	isHealthy = false
 	bigSlice  []byte
 )
 
 func main() {
 	// Allocate 200MB after 3 minutes
+	_, found := os.LookupEnv("ENVIRONMENT")
+	if !found {
+		fmt.Println("ENVIRONMENT variable not found")
+		os.Exit(1)
+	}
+
 	go func() {
 		time.Sleep(3 * time.Minute)
 		bigSlice = make([]byte, 200*1024*1024) // 200MB
