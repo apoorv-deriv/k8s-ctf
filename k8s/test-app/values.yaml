@@ -36,7 +36,7 @@ livenessProbe:
   failureThreshold: 3
   httpGet:
     path: /healthz
-    port: fraud-prev
+    port: k8s-ctf
 
 readinessProbe:
   periodSeconds: 30
@@ -45,4 +45,4 @@ readinessProbe:
   failureThreshold: 3
   httpGet:
     path: /healthz
-    port: fraud-prev
+    port: k8s-ctf
