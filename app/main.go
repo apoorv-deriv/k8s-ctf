@@ -8,7 +8,7 @@ import (
 )
 
 var (
-	isHealthy = 
+	isHealthy = true
 	bigSlice  []byte
 )
 
