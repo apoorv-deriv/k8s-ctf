@@ -8,7 +8,7 @@ containers:
 image:
   repository: apoorvderiv/k8s-ctf
   pullPolicy: IfNotPresent
-  tag: "v0"
+  tag: "a0"
 
 labels:
   lbtype: internal
